@@ -1,0 +1,2 @@
+Hi,
+This is an independent project on Data Mining. The Data set is taken from uci website. I have used RandomForestClassifier and obtained 0.81 accuracy. I have attached the source code file and datasets here.
