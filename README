@@ -1,2 +1,6 @@
 Hi,
-This is an independent project on Data Mining. The Data set is taken from uci website. I have used RandomForestClassifier and obtained 0.81 accuracy. I have attached the source code file and datasets here.
+This is an independent project on Data Mining. The Data set is taken from uci website. 
+I have used RandomForestClassifier,AdaBoostClassifier and DecisionTreeClassifier. 
+I have attached the source code file and datasets here.
+AdaBoostClassifier is the best of the three for this Dataset with accuracy of 0.82
+Executing the code will display accuracy of the three classifiers that have been used
