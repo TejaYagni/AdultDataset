@@ -154,6 +154,38 @@ def prec(pred,numpy_actual_values):
     print (precision)
 
 #Method call
+print "\nRandom Forest Classifier: "
 prec(pred,numpy_actual_values)
 
+#import for AdaBoostClassifier
+from sklearn.ensemble import AdaBoostClassifier
+
+#Training the classifier
+abc = AdaBoostClassifier(n_estimators = 100)
+abc.fit(train_nolabel_df,label_df)
+
+#Predicting the class for test data
+pred_ada = abc.predict(test_nolabel_df)
+
+#Storing the output set to file
+np.savetxt('adult_ada.csv',np.c_[range(1,16282),pred],delimiter=',',header = 'adultId,Salary',comments = '',fmt = '%s')
+
+#Printing output to console
+print "\nAda Boost Classifier: "
+prec(pred_ada,numpy_actual_values)
+
+#Importing Classifier
+from sklearn.tree import DecisionTreeClassifier
+
+#Training the classifier
+dtc = DecisionTreeClassifier(random_state = 0)
+dtc.fit(train_nolabel_df,label_df)
+pred_dtc = dtc.predict(test_nolabel_df)
+
+#Storing the output set to file
+np.savetxt('adult_dtc.csv',np.c_[range(1,16282),pred],delimiter=',',header = 'adultId,Salary',comments = '',fmt = '%s')
+
+#Printing output to console
+print "\nDecision Tree Classifier: "
+prec(pred_dtc,numpy_actual_values)
 
